@@ -11,25 +11,33 @@ int rev_val(float result)
 {
     double totalSpent = 0, leftOver, revenue;
     
+    // Percentages for ads, production, etc.
     const double maintenance_rate = 0.02, resources_rate = 0.26, 
-    production_rate = 0.13, advertising_rate = 0.07;
+                 production_rate = 0.13, advertising_rate = 0.07;
     
     double variable_cost;
     
-    const double fixed_Cost = 12147; //This cost includes the rent, insurance, utilities and property tax
+    // Fixed costs like rent and bills
+    const double fixed_Cost = 12147; 
     
     
+    // Get the money made this quarter
     cout << "Enter the total revenue for this quarter: " << endl;
     cin >> revenue;
     revenue = 
+    // Calculate costs based on the revenue
     variable_cost = revenue*(maintenance_rate + resources_rate + production_rate + advertising_rate);
     
+    // Add all costs together
     totalSpent = variable_cost + fixed_Cost;
     
+    // Calculate money remaining
     leftOver = revenue - totalSpent;
     
+    // Show the final numbers
     cout << "The total amount of the revenue needed for the various expenses this quarter is: " << totalSpent << endl;
     cout << "The amount of revenue left over for this quarter is: " << leftOver;
     
+    // Pass the remaining money to the next part of the code
     return leftOver;
 }
