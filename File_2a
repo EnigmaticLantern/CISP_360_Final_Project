@@ -8,6 +8,7 @@
 int employ(float result)
 {
     using namespace std;
+    // Show the current money balance
     cout << result << endl;
 
     int numEmployees;
@@ -15,6 +16,7 @@ int employ(float result)
     cin >> numEmployees;
     cout << "You have " << numEmployees << " employees." << endl;
 
+    // Loop to ask for each employee's information
     for (int i = 1; i <= numEmployees; i++)
     {
         string employeeName;
@@ -26,6 +28,7 @@ int employ(float result)
         cout << "What type of work does " << employeeName << " do?" << endl;
         cin >> employeeWork;
 
+        // Check the role and subtract the salary from the result
         if (employeeWork == "Crewmember")
         {
             result = result - 3000;
@@ -48,9 +51,11 @@ int employ(float result)
         }
         else
         {
+            // If the user types something wrong
             cout << "Invalid response." << endl;
             cin >> employeeWork;
         }
     }
+    // Return the new balance after paying everyone
     return result;
 }
