@@ -1,0 +1,56 @@
+//Part 2a- Number of Employees
+/* Made by Liam Y.*/
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+int employ(float result)
+{
+    using namespace std;
+    cout << result << endl;
+
+    int numEmployees;
+    cout << "How many employees do you have?" << endl;
+    cin >> numEmployees;
+    cout << "You have " << numEmployees << " employees." << endl;
+
+    for (int i = 1; i <= numEmployees; i++)
+    {
+        string employeeName;
+        string employeeWork;
+        cout << "Please enter the name of employee #" << i << ": ";
+        cin >> employeeName;
+        cout << "Employee #" << i << " is " << employeeName << "." << endl;
+        cout << "Crewmember, Manager, Head Manager, or CEO?" << endl;
+        cout << "What type of work does " << employeeName << " do?" << endl;
+        cin >> employeeWork;
+
+        if (employeeWork == "Crewmember")
+        {
+            result = result - 3000;
+            cout << employeeName << "'s salary is $3000." << endl;
+        }
+        else if (employeeWork == "Manager")
+        {
+            result = result - 5000;
+            cout << employeeName << "'s salary is $5000." << endl;
+        }
+        else if (employeeWork == "Head Manager")
+        {
+            result = result - 7000;
+            cout << employeeName << "'s salary is $7000." << endl;
+        }
+        else if (employeeWork == "CEO")
+        {
+            result = result - 10000;
+            cout << employeeName << "'s salary is $10000." << endl;
+        }
+        else
+        {
+            cout << "Invalid response." << endl;
+            cin >> employeeWork;
+        }
+    }
+    return result;
+}
