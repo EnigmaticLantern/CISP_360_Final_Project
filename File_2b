@@ -1,0 +1,35 @@
+/*This program will use the revenue value provided to calulate the different costs and total amount 
+needed to spend on things like maintenance, production, advertising, as well as the fixed costs and 
+other things for a company and how much is left over*/
+/* Made by Brydan W. */
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int rev_val(float result)
+{
+    double totalSpent = 0, leftOver, revenue;
+    
+    const double maintenance_rate = 0.02, resources_rate = 0.26, 
+    production_rate = 0.13, advertising_rate = 0.07;
+    
+    double variable_cost;
+    
+    const double fixed_Cost = 12147; //This cost includes the rent, insurance, utilities and property tax
+    
+    
+    cout << "Enter the total revenue for this quarter: " << endl;
+    cin >> revenue;
+    revenue = 
+    variable_cost = revenue*(maintenance_rate + resources_rate + production_rate + advertising_rate);
+    
+    totalSpent = variable_cost + fixed_Cost;
+    
+    leftOver = revenue - totalSpent;
+    
+    cout << "The total amount of the revenue needed for the various expenses this quarter is: " << totalSpent << endl;
+    cout << "The amount of revenue left over for this quarter is: " << leftOver;
+    
+    return leftOver;
+}
