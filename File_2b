@@ -24,7 +24,7 @@ int rev_val(float result)
     // Get the money made this quarter
     cout << "Enter the total revenue for this quarter: " << endl;
     cin >> revenue;
-    revenue = 
+    
     // Calculate costs based on the revenue
     variable_cost = revenue*(maintenance_rate + resources_rate + production_rate + advertising_rate);
     
