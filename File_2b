@@ -33,10 +33,13 @@ int rev_val(float result)
     
     // Calculate money remaining
     leftOver = revenue - totalSpent;
+
+    cout << fixed << setprecision(2);
     
     // Show the final numbers
-    cout << "The total amount of the revenue needed for the various expenses this quarter is: " << totalSpent << endl;
-    cout << "The amount of revenue left over for this quarter is: " << leftOver;
+    cout << "------------------\n";
+    cout << "\nRevenue Needed: $" << totalSpent << endl;
+    cout << "Amount Left Over: $" << leftOver << endl;
     
     // Pass the remaining money to the next part of the code
     return leftOver;
