@@ -32,7 +32,7 @@ void employeeSalary(string employeeWork, string employeeName, float result)
     }
 }
 
-int main(float result)
+int employ(float result)
 {
     // Show the current money balance
     cout << result << endl;
