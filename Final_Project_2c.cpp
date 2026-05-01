@@ -1,11 +1,13 @@
 #include <iostream>
+#include <string>
+#include <iomanip>
 using namespace std;
 
 
 /* Should prompt the user if they want to put the money into savings, raises, or an HR pool table.*/
 /* Made by Torin W.*/
 
-int main() {
+int decide(float result) {
     cout << "Would you like to put the money towards savings, raises for employees, or a pool table (at HR's request)?: ";
     cout << "Savings, Raises, or Pool Table?: ";
     string reply;
