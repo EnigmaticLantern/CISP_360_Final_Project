@@ -1,9 +1,11 @@
 #include <iostream>
-/* #include "file_2a" */
-/* #include "file_2b" */
-/* #include "file_2c" */
+#include <string>
+#include <iomanip>
+#include "FinalProjectPart2a.cpp" 
+#include "FinalProject2b.cpp"
+#include "Final_Project_2c.cpp"
 using namespace std;
-/* Made by Torin W. */
+/* This file was made by Torin W. */
 
 
 int main(){
@@ -11,28 +13,30 @@ int main(){
     cout << "How much did you make in this past quarter?: ";
     int initial_amount;
     cin >> initial_amount;
-    float result = 0;
-    /*int file_2a(initial_amount, result)*/
-    cout << "There is $" << result << " remaining." << endl;
-
+    double result = initial_amount;
+    employ(result);
+    cout << "There is $" << fixed << setprecision(2) << result << " remaining." << endl;
     cout << "How much needs to be spent on maintenence/machine repairs/etc?: ";
     float amount_two;
     cin >> amount_two;
-    float result_two = 0;
-    /* file_2B(amount_two, result)*/
+    float result_two;
+    float leftOver;
+    rev_val(result);
+    cout << leftOver << endl;
+    result = leftOver;
     if (result > 0)
         cout << "There is $" << result << " remaining." << endl;
         cout << "You have some left over, would you like to give raises, save it, or do something else with it (other)? (R, S, or O): ";
         string decision1;
         cin >> decision1;
         if (decision1 == "R" || decision1 == "r")
-            /* file_2c(result, result_two);*/
+            int decide(result);
         if (decision1 == "S" || decision1 == "s")
-            /*file_2c(result, result_two);*/
+            int decide(result);
         if (decision1 == "O" || decision1 == "o")
             cout << "Thank you for using our calculator." << endl << "Have a good day/night!";
     if (result < 0)
         cout << "You don't have enought to deliver raises or put into savings";
-        cout << "You are $" << result_two << "in debt.";
+        cout << "You are $" << result << " in debt.";
     return 0;
 }
