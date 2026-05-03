@@ -6,23 +6,24 @@
 #include <iomanip>
 using namespace std;
 
-void employeeSalary(string employeeWork, string employeeName, float result)
+float employeeSalary(string employeeWork, string employeeName, double &result)
 {
+    int costs = 0;
     
     if (employeeWork == "Crewmember")
     {
-        result -= 30000; // Example salary for a crewmember
         cout << employeeName << " is a " << employeeWork << " and is paid $30,000." << endl;
+        result = result - 30000; // Example salary for a crewmember
     }
     else if (employeeWork == "Manager")
     {
-        result -= 60000; // Example salary for a manager
         cout << employeeName << " is a " << employeeWork << " and is paid $60,000." << endl;
+        result = result - 60000; // Example salary for a manager
     }
     else if (employeeWork == "CEO")
     {
-        result -= 100000; // Example salary for a CEO
         cout << employeeName << " is a " << employeeWork << " and is paid $100,000." << endl;
+        result = result - 100000; // Example salary for a CEO
     }
     else
     {
@@ -30,12 +31,13 @@ void employeeSalary(string employeeWork, string employeeName, float result)
         cin >> employeeWork; // Prompt the user to enter a valid employee type
         employeeSalary(employeeWork, employeeName, result); // Recursive call to handle the new input
     }
+    return result;
 }
 
-int employ(float result)
+int employ(double *result)
 {
     // Show the current money balance
-    cout << result << endl;
+    cout << "There is $" << fixed << setprecision(2) << *result << " remaining." << endl;
 
     int numEmployees;
     cout << "How many employees do you have?" << endl;
@@ -51,8 +53,9 @@ int employ(float result)
         cout << "Crewmember, Manager, or CEO?" << endl;
         cout << "What type of work does " << employeeName << " do?" << endl;
         cin >> employeeWork;
-        employeeSalary(employeeWork, employeeName, result); // Call the function to calculate salary and update result
+        employeeSalary(employeeWork, employeeName, *result); // Call the function to calculate salary and update result
+        cout << "Current balance: $" << *result << endl;
     }
     // Return the new balance after paying everyone
-    return result;
+    return *result;
 }
