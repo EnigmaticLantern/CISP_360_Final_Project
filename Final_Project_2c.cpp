@@ -1,25 +1,22 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <string>
 using namespace std;
 
 
 /* Should prompt the user if they want to put the money into savings, raises, or an HR pool table.*/
 /* Made by Torin W.*/
 
-int decide(float result) {
-    cout << "Would you like to put the money towards savings, raises for employees, or a pool table (at HR's request)?: ";
-    cout << "Savings, Raises, or Pool Table?: ";
-    string reply;
-    cin >> reply;
-    if (reply == "Savings" || reply == "savings" || reply == "S" || reply == "s"){
-
+double decide(string decisionOne, double *result) {
+    if (decisionOne == "Savings" || decisionOne == "savings" || decisionOne == "S" || decisionOne == "s"){
+        cout << "$" << *result << " is added to savings." << endl;
     }
-    if (reply == "Raises" || reply == "raises" || reply == "R" || reply == "r"){
-        
+    if (decisionOne == "Raises" || decisionOne == "raises" || decisionOne == "R" || decisionOne == "r"){
+        cout << "$" << *result << " is added to employee raises." << endl;
     }
-    if (reply == "Pool Table" || reply == "pool table" || reply == "table" || reply == "Table"){
-        
+    if (decisionOne == "Pool Table" || decisionOne == "pool table" || decisionOne == "table" || decisionOne == "Table" || decisionOne == "t" || decisionOne == "T"){
+        cout << "$" << *result << " is used for the pool table." << endl;
     }
-    return 0;
+    return *result;
 }
