@@ -22,7 +22,12 @@ int main(){
     rev_val(result); 
     if (*result > 0.0) {
         cout << "There is $" << *result << " remaining." << endl;
-        cout << "You have some left over, would you like to give raises, save it, use it for the pool table, or do something else with it (other)? (R, S, T, or O): ";
+        string options[] = {"Raises for employees", "Save it", "Use it for the pool table", "Do something else"};
+        cout << "You have some left over, would you like to:";
+        for (int i = 0; i < 4; i++) {
+            cout << endl << i + 1 << ". " << options[i];
+        }
+        cout << endl << "Enter your choice (R, S, T, or O): ";
         string decisionOne;
         cin >> decisionOne;
         if (decisionOne == "R" || decisionOne == "r")
