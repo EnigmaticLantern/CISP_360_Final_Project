@@ -7,9 +7,9 @@ other things for a company and how much is left over*/
 #include <iomanip>
 using namespace std;
 
-int rev_val(float result)
+double rev_val(double *result)
 {
-    double totalSpent = 0, leftOver, revenue;
+    double totalSpent = 0, leftOver;
     
     // Percentages for ads, production, etc.
     const double maintenance_rate = 0.02, resources_rate = 0.26, 
@@ -20,19 +20,14 @@ int rev_val(float result)
     // Fixed costs like rent and bills
     const double fixed_Cost = 12147; 
     
-    
-    // Get the money made this quarter
-    cout << "Enter the total revenue for this quarter: " << endl;
-    cin >> revenue;
-    
     // Calculate costs based on the revenue
-    variable_cost = revenue*(maintenance_rate + resources_rate + production_rate + advertising_rate);
+    variable_cost = *result*(maintenance_rate + resources_rate + production_rate + advertising_rate);
     
     // Add all costs together
     totalSpent = variable_cost + fixed_Cost;
     
     // Calculate money remaining
-    leftOver = revenue - totalSpent;
+    leftOver = *result - totalSpent;
 
     cout << fixed << setprecision(2);
     
@@ -40,7 +35,7 @@ int rev_val(float result)
     cout << "------------------\n";
     cout << "\nRevenue Needed: $" << totalSpent << endl;
     cout << "Amount Left Over: $" << leftOver << endl;
-    
+    *result = leftOver;
     // Pass the remaining money to the next part of the code
-    return leftOver;
+    return *result;
 }
